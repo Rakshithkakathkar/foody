@@ -1,0 +1,34 @@
+{
+  "name": "foody",
+  "version": "1.0.0",
+  "description": "Food ordering app",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rakshithkakathkar/foody.git"
+  },
+  "author": "Rakshith Kakathkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rakshithkakathkar/foody/issues"
+  },
+  "homepage": "https://github.com/Rakshithkakathkar/foody#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserlist": [
+    "last 2 versions"
+  ]
+}
+
+
+
+
+
