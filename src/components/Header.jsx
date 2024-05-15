@@ -1,11 +1,10 @@
+import { LOGO_IMG } from "../utils/constants";
+
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://th.bing.com/th/id/OIP.cFnOXfOaKfWAWWhxWLUE-gHaHa?rs=1&pid=ImgDetMain"
-        />
+        <img className="logo" src={LOGO_IMG} />
       </div>
       <div className="nav-items">
         <ul>
