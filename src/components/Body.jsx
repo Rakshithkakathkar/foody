@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { RES_LIST_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [masterResList, setMasterResList] = useState([]);
   const [resList, setResList] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
   const filterTopRes = () => {
     setResList(masterResList.filter((res) => res.info.avgRating > 4));
   };
@@ -34,6 +36,9 @@ const Body = () => {
     );
   };
 
+  if (onlineStatus === false) {
+    return <h1>You are offline, check internet connection</h1>;
+  }
   return resList.length === 0 ? (
     <Shimmer />
   ) : (
