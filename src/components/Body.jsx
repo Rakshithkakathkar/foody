@@ -10,7 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
   const filterTopRes = () => {
-    setResList(masterResList.filter((res) => res.info.avgRating > 4));
+    setResList(masterResList.filter((res) => res.info.avgRating > 4.2));
   };
 
   const searchRestarant = () => {
@@ -42,23 +42,34 @@ const Body = () => {
   return resList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="mx-48">
+      <div className="flex justify-center">
+        <div className="m-4 p-4">
           <input
             type="text"
+            className="border border-solid border-black w-96 rounded-md"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
             value={searchText}
           />
-          <button onClick={searchRestarant}>Search</button>
         </div>
-        <button className="filter-btn" onClick={filterTopRes}>
-          Top Rated Restaurants
-        </button>
+        <div className="flex items-center">
+          <button
+            className="px-4 py-2 m-4 bg-yellow-50 rounded-lg"
+            onClick={searchRestarant}
+          >
+            Search
+          </button>
+          <button
+            className="px-4 py-2 m-4 bg-yellow-50 rounded-lg"
+            onClick={filterTopRes}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {resList?.map((res) => (
           <Link to={"/restaurants/" + res.info.id} key={res.info.id}>
             <RestaurantCard resData={res} />
