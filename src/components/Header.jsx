@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={LOGO_IMG} />
+        <Link to="/">
+          <img className="logo" src={LOGO_IMG} />
+        </Link>
       </div>
       <div className="nav-items">
         <ul>
@@ -22,7 +24,7 @@ const Header = () => {
           </li>
           <li>Cart</li>
           <button className="login-btn" onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? "Logout" : "Login"}
+            {isLogin ? "Logout" : "Login"} 
           </button>
         </ul>
       </div>
