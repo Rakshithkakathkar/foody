@@ -21,6 +21,7 @@ const Body = () => {
     );
   };
 
+  console.log(masterResList);
   useEffect(() => {
     fetchData();
   }, []);
