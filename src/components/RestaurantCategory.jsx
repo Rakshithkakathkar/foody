@@ -1,9 +1,9 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data, showIndex, setShowIndex }) => {
+const RestaurantCategory = ({ data, showIndex, expandCategory }) => {
   const handleClick = () => {
-    setShowIndex();
+    expandCategory();
   };
   return (
     <div>

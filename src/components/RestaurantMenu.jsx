@@ -36,7 +36,7 @@ const RestaurantMenu = () => {
             key={category?.card?.card?.title}
             data={category?.card?.card}
             showIndex={index === showIndex ? true : false}
-            setShowIndex={() => setShowIndex(index)}
+            expandCategory={() => setShowIndex(index)}
           />
         );
       })}
