@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./redux/appStore";
 
 // lazy loading
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -23,12 +25,14 @@ const AppLayout = () => {
     setUserName(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
