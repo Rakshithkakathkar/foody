@@ -9,6 +9,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     <div className="flex justify-between shadow-lg mb-2">
@@ -32,7 +33,10 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="px-4">Cart {cartItems.length}</li>
+          <li className="px-4">
+            <Link to="/cart">Cart </Link>
+            {cartItems.length}
+          </li>
           <button className="login-btn" onClick={() => setIsLogin(!isLogin)}>
             {isLogin ? "Logout" : "Login"}
           </button>
